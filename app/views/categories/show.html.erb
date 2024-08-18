@@ -1,0 +1,11 @@
+<h1> Categories: </h1>
+
+<div>
+  <p>
+    <ul>
+    <% @category.posts.each do |category| %>
+      <li><%= link_to category.title, post_path(category)%></li>
+    <% end %>
+    </ul>
+  </p>
+</div>
