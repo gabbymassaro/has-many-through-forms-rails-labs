@@ -1,1 +1,29 @@
+<h1>Posts:</h1>
 
+<h3><%= @post.title %></h3>
+<p>
+  <%= @post.content %>
+</p>
+
+<div>
+  <h4>Categories:</h4>
+  <ul>
+    <% @post.categories.each do |category| %>
+    <li><%= category.name %></li>
+    <% end %>
+  </ul>
+
+  <h4>Comments:</h4>
+  <ul>
+    <% @post.comments.each do |comment| %>
+    <li><%= comment.content %></li>
+    <% end %>
+  </ul>
+
+  <h4>Commented Users:</h4>
+  <ul>
+    <% @post.comments.map { |comment| comment.user.username }.uniq.each do |username| %>
+    <li><%= link_to username %></li>
+    <% end %>
+  </ul>
+</div>
