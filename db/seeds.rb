@@ -1,4 +1,9 @@
 # db/seeds.rb
+User.destroy_all
+Category.destroy_all
+Post.destroy_all
+PostCategory.destroy_all
+Comment.destroy_all
 
 # Create Users
 user1 = User.create!(username: 'alice', email: 'alice@example.com')
